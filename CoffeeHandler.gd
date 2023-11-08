@@ -12,12 +12,15 @@ extends Control
 @onready var froth_slide = $Background/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/HBoxContainer/FrothSlide
 @onready var chocolate_slide = $Background/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/HBoxContainer/ChocolateSlide
 
+@onready var slideList = [espresso_slide, milk_slide, froth_slide, chocolate_slide]
+
 var cupSize
 var cupLevel = 0
-var chocVal = 0
-var frothVal = 0
+
 var espressVal = 0
 var milkVal = 0
+var frothVal = 0
+var chocVal = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +30,15 @@ func _ready():
 	froth.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
 	espresso.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
 	milk.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
+	
+	calculateCupLevel()
+
+func calculateCupLevel():
+	var largestVal = 0
+	for slide in slideList:
+		if slide.value > largestVal:
+			largestVal = slide.value
+	cupLevel = largestVal
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,15 +49,14 @@ func _process(delta):
 	drink_name.text = "[wave amp=50.0 freq=5.0 connected=1][center] Cuplevel: %s ChocVal %s [/center][/wave]" % [cupLevel, chocVal]
 
 
-func _on_chocolate_slide_value_changed(value):
-	chocVal = value - cupLevel
-	cupLevel += chocVal
-
-func _on_froth_slide_value_changed(value):
-	pass
+func _on_espresso_slide_value_changed(value):
+	calculateCupLevel()
 
 func _on_milk_slide_value_changed(value):
-	pass
+	calculateCupLevel()
 
-func _on_espresso_slide_value_changed(value):
-	pass
+func _on_froth_slide_value_changed(value):
+	calculateCupLevel()
+	
+func _on_chocolate_slide_value_changed(value):
+	calculateCupLevel()
