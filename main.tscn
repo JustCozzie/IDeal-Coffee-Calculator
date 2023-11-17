@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0nrjv132w643"]
+[gd_scene load_steps=28 format=3 uid="uid://d0nrjv132w643"]
 
 [ext_resource type="Script" path="res://CoffeeHandler.gd" id="1_aulta"]
 [ext_resource type="Texture2D" uid="uid://dl836sg43liw3" path="res://Ideal coffee calculator header.png" id="1_dmg6c"]
@@ -12,12 +12,29 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg2gn"]
 bg_color = Color(0.921569, 0.627451, 0.337255, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfv70"]
-border_width_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afpkb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyr0p"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6t2wh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0ebw"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsql1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mori2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sro8p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jgkg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2apg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu2rp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xr5kh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwxts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3jbf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyd34"]
 
 [sub_resource type="Theme" id="Theme_lhwli"]
 
@@ -119,6 +136,9 @@ theme_override_constants/center_grabber = 1
 theme_override_icons/grabber = ExtResource("3_5k7yg")
 theme_override_icons/grabber_highlight = ExtResource("3_5k7yg")
 theme_override_icons/grabber_disabled = ExtResource("3_5k7yg")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_afpkb")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_6t2wh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_fsql1")
 step = 5.0
 rounded = true
 
@@ -128,6 +148,9 @@ theme_override_constants/center_grabber = 1
 theme_override_icons/grabber = ExtResource("3_shvfk")
 theme_override_icons/grabber_highlight = ExtResource("3_shvfk")
 theme_override_icons/grabber_disabled = ExtResource("3_shvfk")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_mori2")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_sro8p")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_6jgkg")
 step = 5.0
 rounded = true
 
@@ -137,6 +160,9 @@ theme_override_constants/center_grabber = 1
 theme_override_icons/grabber = ExtResource("3_hkwk6")
 theme_override_icons/grabber_highlight = ExtResource("3_hkwk6")
 theme_override_icons/grabber_disabled = ExtResource("3_hkwk6")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_j2apg")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_pu2rp")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_xr5kh")
 step = 5.0
 rounded = true
 
@@ -146,9 +172,9 @@ theme_override_constants/center_grabber = 1
 theme_override_icons/grabber = ExtResource("3_k7xcd")
 theme_override_icons/grabber_highlight = ExtResource("3_k7xcd")
 theme_override_icons/grabber_disabled = ExtResource("3_k7xcd")
-theme_override_styles/slider = SubResource("StyleBoxFlat_xfv70")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_eyr0p")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_k0ebw")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_pwxts")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_r3jbf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_tyd34")
 step = 5.0
 rounded = true
 
@@ -156,6 +182,7 @@ rounded = true
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
 texture = ExtResource("2_flrvw")
 expand_mode = 3
 stretch_mode = 5
@@ -235,6 +262,22 @@ size_flags_stretch_ratio = 0.2
 alignment = 1
 
 [node name="Button" type="Button" parent="Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Dictionary"
+
+[node name="Button2" type="Button" parent="Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Yi"
+
+[node name="Button3" type="Button" parent="Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Yi"
+
+[node name="Button4" type="Button" parent="Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Yi"
+
+[node name="Button5" type="Button" parent="Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "Yi"
 

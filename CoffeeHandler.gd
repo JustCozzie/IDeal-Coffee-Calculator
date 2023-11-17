@@ -47,21 +47,40 @@ func _process(delta):
 	if cup.get_size() != cupSize:
 			cupSize = cup.get_size()
 	
+	if milk_slide.value < espressVal:
+		milk_slide.value = espressVal
+	if froth_slide.value < espressVal:
+		froth_slide.value = espressVal
+	if chocolate_slide.value < espressVal:
+		chocolate_slide.value = espressVal
+	
+	if froth_slide.value < milkVal:
+		froth_slide.value = milkVal
+	if froth_slide.value < chocVal:
+		froth_slide.value = chocVal
+	if milk_slide.value < chocVal:
+		milk_slide.value = chocVal
+	
 	drink_name.text = "[wave amp=50.0 freq=5.0 connected=1][center] Cuplevel: %s ChocVal %s [/center][/wave]" % [cupLevel, chocVal]
 
 
 func _on_espresso_slide_value_changed(value):
 	espresso.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
 	calculateCupLevel()
+	espressVal = value
+
 
 func _on_milk_slide_value_changed(value):
 	milk.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
 	calculateCupLevel()
+	milkVal = value
 
 func _on_froth_slide_value_changed(value):
 	froth.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
 	calculateCupLevel()
+	frothVal = value
 	
 func _on_chocolate_slide_value_changed(value):
 	chocolate.set_custom_minimum_size(Vector2(0, (value / 100 * (0.95*cupSize.y))))
 	calculateCupLevel()
+	chocVal = value
